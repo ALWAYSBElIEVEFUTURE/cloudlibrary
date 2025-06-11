@@ -19,7 +19,6 @@ public class SpringMvcConfig  implements WebMvcConfigurer {
   @Value("#{'${ignoreUrl}'.split(',')}")
     private List<String> ignoreUrl;
 
-    private List<String> ignoreUrl2;
     @Bean
     public ResourcesInterceptor resourcesInterceptor(){
         return new ResourcesInterceptor(ignoreUrl);
