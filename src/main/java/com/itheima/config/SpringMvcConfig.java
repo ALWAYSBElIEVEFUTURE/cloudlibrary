@@ -43,6 +43,14 @@ public class SpringMvcConfig  implements WebMvcConfigurer {
         configurer.enable();
     }
 
+    /*
+     *开启对静态资源的访问
+     * 类似在Spring MVC的配置文件中设置<mvc:default-servlet-handler/>元素
+     */
+    public void test() {
+        return;
+    }
+
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         registry.jsp("/admin/",".jsp");
