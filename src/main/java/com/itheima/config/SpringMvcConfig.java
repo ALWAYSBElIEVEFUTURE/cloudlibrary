@@ -18,6 +18,8 @@ import java.util.List;
 public class SpringMvcConfig  implements WebMvcConfigurer {
   @Value("#{'${ignoreUrl}'.split(',')}")
     private List<String> ignoreUrl;
+
+    private List<String> ignoreUrl2;
     @Bean
     public ResourcesInterceptor resourcesInterceptor(){
         return new ResourcesInterceptor(ignoreUrl);
@@ -27,6 +29,7 @@ public class SpringMvcConfig  implements WebMvcConfigurer {
      * addPathPatterns()方法设置拦截的路径
      * excludePathPatterns()方法设置不拦截的路径
      */
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor( resourcesInterceptor()).addPathPatterns("/**").excludePathPatterns("/css/**","/js/**","/img/**");
